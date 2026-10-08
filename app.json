@@ -22,7 +22,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.frefara.SmartParkingNew"
+      "package": ""
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,7 +33,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "8ed3cf00-14f7-4e84-b5de-3789529a0adb"
+        "projectId": ""
       }
     }
   }
