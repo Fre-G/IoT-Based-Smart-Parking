@@ -1,4 +1,4 @@
-// App.js – Full working version with notification fix
+
 import React, { useEffect, useRef } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,7 +8,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { registerForPushNotificationsAsync, listenForNotifications } from './services/notifications';
 
-// Screens
+
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import VerifyEmailScreen from './screens/VerifyEmailScreen';
@@ -85,16 +85,15 @@ function AppContent() {
   const { colors } = useTheme();
 
   useEffect(() => {
-    // Register for push notifications (works in Expo Go and dev build)
     registerForPushNotificationsAsync();
-    // ✅ FIX: listenForNotifications now returns a cleanup function
+   
     const cleanup = listenForNotifications(navigationRef);
     return cleanup;
   }, []);
 
   return (
     <NavigationContainer ref={navigationRef}>
-      {/* 🔥 ALWAYS FORCES APP TO RUN LOGIN / REGISTER COMPONENT AT ROOT LOADING PHASE */}
+  
       <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
