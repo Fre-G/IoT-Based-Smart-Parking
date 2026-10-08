@@ -3,7 +3,7 @@ let lastState = false;
 let sessionStartTime = null;    
 
 
-const ESP32_IP = '10.222.125.162';   
+const ESP32_IP = '***********';   
 const HOURLY_RATE = 15;
 
 async function fetchHardwareOccupancy() {
